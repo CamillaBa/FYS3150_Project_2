@@ -312,8 +312,8 @@ int main(){
 
 	//========================================================================================================================
 
-	// schrÃ¶dingers equation (harmonic oscillator)
-	N = 500; h = 10.0 / N; hh = h * h;
+	// schrödingers equation (harmonic oscillator)
+	N = 150; h = 10.0 / N; hh = h * h;
 	A = sparse(N - 1); U = sparse(N - 1); lambda = zeros(N - 1);
 
 	// approximate double derivative + potential term
@@ -325,7 +325,7 @@ int main(){
 
 	// printing 10 smallest eigenvalues to terminal
 	std::sort(lambda, lambda + (N - 1));
-	std::cout << "Solving SchrÃ¶dingers for harmonic oscillator potential with (N=" << N << " and infinity = " << h*N << ")" << std::endl;
+	std::cout << "Solving Schrödingers for harmonic oscillator potential with (N=" << N << " and infinity = " << h*N << ")" << std::endl;
 	std::cout << "The 10 smalles eigenvalues (energies): \n\n";
 	for (int j = 0; j < 10; j++) {
 		std::cout << lambda[j] << std::endl;
@@ -337,8 +337,8 @@ int main(){
 
 	//========================================================================================================================
 
-	// schrÃ¶dingers equation (two particles)
-	N = 500; h = 10.0 / N; hh = h * h; double omega_r = 5.0; double ih;
+	// schrödingers equation (two particles)
+	N = 150; h = 10.0 / N; hh = h * h; double omega_r = 5.0; double ih;
 	A = sparse(N - 1); U = sparse(N - 1); lambda = zeros(N - 1);
 	
 	// approximate double derivative + potential term
@@ -353,7 +353,7 @@ int main(){
 
 	// printing 10 smallest eigenvalues to terminal
 	std::sort(lambda, lambda + (N - 1));
-	std::cout << "Solving SchrÃ¶dingers for 2-particles with (N=" << N << " and infinity = " << h * N << " and omega_r="<< omega_r <<" )" << std::endl;
+	std::cout << "Solving Schrödingers for 2-particles with (N=" << N << " and infinity = " << h * N << " and omega_r="<< omega_r <<" )" << std::endl;
 	std::cout << "The 10 smalles eigenvalues (energies): \n\n";
 	for (int j = 0; j < 10; j++) {
 		std::cout << lambda[j] << std::endl;
