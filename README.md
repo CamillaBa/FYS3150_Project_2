@@ -47,6 +47,49 @@ and the last part finds the 10 lowest eigenvalues of a dimensionless schrödinge
 The results of each part is printed to the terminal.
 
 
+For example, the output of the unaltered program becomes:
+
+"Relative error of eigenvalues of buckling beam (N = 10)
+
+Relative error: 1.24449e-13
+Relative error: 7.37752e-14
+Relative error: 1.14348e-13
+Relative error: 1.19229e-13
+Relative error: 4.45101e-14
+Relative error: 1.13666e-13
+Relative error: 5.32607e-14
+Relative error: 2.95717e-14
+Relative error: 0
+
+Solving Schr÷dingers for harmonic oscillator potential with (N=150 and infinity = 10)
+The 10 smalles eigenvalues (energies):
+
+2.85169
+6.77119
+10.705
+14.6438
+18.5841
+22.524
+26.4625
+30.3991
+34.3331
+38.2642
+
+Solving Schr÷dingers for 2-particles with (N=150 and infinity = 10 and omega_r=5 )
+The 10 smalles eigenvalues (energies):
+
+20.5078
+41.6884
+62.4887
+83.022
+103.336
+123.458
+143.402
+163.178
+182.794
+202.253
+
+success!"
 
 
 
