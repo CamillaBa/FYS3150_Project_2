@@ -132,9 +132,9 @@ void jacobi_rot_algorithm(double ** & A, double ** & U, double * & lambda, int N
 			}
 
 			// solve for eigenvectors
-			//Uik = U[i][k]; Uil = U[i][l];
-			//U[i][k] = c * Uik - s * Uil;
-			//U[i][l] = c * Uil + s * Uik;
+			Uik = U[i][k]; Uil = U[i][l];
+			U[i][k] = c * Uik - s * Uil;
+			U[i][l] = c * Uil + s * Uik;
 		}
 	}
 
@@ -312,7 +312,7 @@ int main(){
 
 	//========================================================================================================================
 
-	// schrödingers equation (harmonic oscillator)
+	// schrÃ¶dingers equation (harmonic oscillator)
 	N = 500; h = 10.0 / N; hh = h * h;
 	A = sparse(N - 1); U = sparse(N - 1); lambda = zeros(N - 1);
 
@@ -325,7 +325,7 @@ int main(){
 
 	// printing 10 smallest eigenvalues to terminal
 	std::sort(lambda, lambda + (N - 1));
-	std::cout << "Solving Schrödingers for harmonic oscillator potential with (N=" << N << " and infinity = " << h*N << ")" << std::endl;
+	std::cout << "Solving SchrÃ¶dingers for harmonic oscillator potential with (N=" << N << " and infinity = " << h*N << ")" << std::endl;
 	std::cout << "The 10 smalles eigenvalues (energies): \n\n";
 	for (int j = 0; j < 10; j++) {
 		std::cout << lambda[j] << std::endl;
@@ -337,7 +337,7 @@ int main(){
 
 	//========================================================================================================================
 
-	// schrödingers equation (two particles)
+	// schrÃ¶dingers equation (two particles)
 	N = 500; h = 10.0 / N; hh = h * h; double omega_r = 5.0; double ih;
 	A = sparse(N - 1); U = sparse(N - 1); lambda = zeros(N - 1);
 	
@@ -353,7 +353,7 @@ int main(){
 
 	// printing 10 smallest eigenvalues to terminal
 	std::sort(lambda, lambda + (N - 1));
-	std::cout << "Solving Schrödingers for 2-particles with (N=" << N << " and infinity = " << h * N << " and omega_r="<< omega_r <<" )" << std::endl;
+	std::cout << "Solving SchrÃ¶dingers for 2-particles with (N=" << N << " and infinity = " << h * N << " and omega_r="<< omega_r <<" )" << std::endl;
 	std::cout << "The 10 smalles eigenvalues (energies): \n\n";
 	for (int j = 0; j < 10; j++) {
 		std::cout << lambda[j] << std::endl;
