@@ -1,6 +1,6 @@
 # FYS3150_Project_2
 
-This program consists of 9 functions in addition to the main function. We first have
+This program consists of 10 functions in addition to the main function. We first have
 three functions that deal with arrays.
 
 double ** sparse( int n)
@@ -31,6 +31,9 @@ void unit_test2(void)
 
 "unit_test1" checks the validity of the function "get_max" and prints the result to the terminal.,
 "unit_test2" checks the validity of "jacobi_rot_algorithm".
+
+also there is a function "count_iterations" which sets up a problem for "jacobi_rot_algorithm" to solve,
+for an n times n matrix A determined by a given n.
 
 Lastly, there is a function 
 
