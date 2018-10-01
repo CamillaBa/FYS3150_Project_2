@@ -292,12 +292,14 @@ int main(){
 	/* Uncomment unit_test1() and unit_test2() for unit tests.
 	Uncomment comparison(50) for comparison of armadillo solver for eigenvectors/eigenvalues vs our implementation of Jacobi's method.
 	The result is printed to "jacobi_vs_armadillo_N_equals_50.txt".
+
+	Uncomment the count_iterations(i) loop and the part in the function "jacobi_rot_algorith" that prints to terminal,
+	to see the steps needed to converge for matrices of different size.
 	*/
 
 	//unit_test1();
 	//unit_test2();
 	//comparison(50);
-
 	//for (int i = 11; i <= 101; i += 10) {
 	//	count_iterations(i);
 	//}
