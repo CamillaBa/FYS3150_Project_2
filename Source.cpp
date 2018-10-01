@@ -94,10 +94,14 @@ void jacobi_rot_algorithm(double ** & A, double ** & U, double * & lambda, int N
 	double maxval;
 
 	bool condition = true;
+
+	
+	int count = 0;
 	while (condition) {
 		maxval = 0.0;
 		get_max(A, (N - 1), k, l, maxval);
 		condition = (maxval > epsilon);
+		count += 1;
 
 		// calculate values for tau, tan(theta), cos(theta), and sin(theta)
 		if (A[k][l] != 0.0) {
@@ -138,10 +142,12 @@ void jacobi_rot_algorithm(double ** & A, double ** & U, double * & lambda, int N
 		}
 	}
 
+	// enable coment below to print number of interations needed to converge
+	//std::cout <<"matrix size: "<< N-1 <<" steps: " << count << "\n\n";
+
 	// obtain eigenvalues
 	for (int i = 0; i < N - 1; i++) { lambda[i] = A[i][i]; }
 }
-
 
 void unit_test1(void) {
 	/* unit test 1 (search for largest element). Testing the function "get_max".
@@ -266,7 +272,20 @@ void comparison(int N) {
 	myfile.close();
 }
 
+void count_iterations(int n) {
+	// setting up variables for arrays
+	double** A = sparse(n); double ** U = sparse(n); double * lambda = zeros(n);
 
+	// initializing tridiagonal toeplitz matrix
+	for (int i = 0; i < n; i++) { A[i][i] = 2.0; }
+	for (int i = 0; i < n - 1; i++) { A[i + 1][i] = -1.0; A[i][i + 1] = -1.0; }
+
+	// initialize U as the identity matrix
+	for (int i = 0; i < n; i++) { U[i][i] = 1; }
+
+	// jacobi's algorithm
+	jacobi_rot_algorithm(A, U, lambda, n);
+}
 
 
 int main(){
@@ -278,6 +297,10 @@ int main(){
 	//unit_test1();
 	//unit_test2();
 	//comparison(50);
+
+	//for (int i = 11; i <= 101; i += 10) {
+	//	count_iterations(i);
+	//}
 
 	double pi = 3.14159265359;
 	int N; double h; double hh; double** A; double** U; double* lambda; double* lambda_analytical;
