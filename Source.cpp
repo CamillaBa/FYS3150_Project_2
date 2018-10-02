@@ -326,9 +326,12 @@ int main(){
 	std::sort(lambda, lambda + (N - 1));
 	std::sort(lambda_analytical, lambda_analytical + (N - 1));
 	std::cout << "Relative error of eigenvalues of buckling beam (N = " << N << ")\n\n";
+	std::cout.precision(17);
+	std::cout << "analytical: " << "	numerical: " << "	relative error:" << std::endl;
+
 
 	for (int j = 1; j <= N - 1; j++) {
-		std::cout << "Relative error: "<< abs(lambda[j] - lambda_analytical[j])/abs(lambda_analytical[j]) <<std::endl;
+		std::cout << lambda_analytical[j] << '	'<< lambda[j] << '	' << abs(lambda[j] - lambda_analytical[j])/abs(lambda_analytical[j]) <<std::endl;
 	}
 	std::cout << std::endl;
 
